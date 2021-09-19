@@ -29,12 +29,12 @@ SRCS := $(wildcard sources/*.cpp)
 OBJS := $(SRCS:.cpp=.o)
 
 # define the executable file
-MAIN := db_manager
+MAIN := the_executable_file
 
 .PHONY: depend clean clean_all
 
 all:    $(MAIN)
-	@echo  'db_manager' has been compiled
+	@echo  'the_executable_file' has been compiled
 
 $(MAIN): $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
