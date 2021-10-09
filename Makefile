@@ -19,9 +19,10 @@ INCLUDES := $(foreach d, $(INC), -I$d)
 LFLAGS := -L./libs
 
 # This should generate a shared object
+# TODO: If you want to create a normal binary file, remove this '-shared' flag
 LDFLAGS := -shared
 
-LIBS := -l sqlite3
+LIBS :=
 
 # define the C++ source files
 SRCS := $(wildcard sources/*.cpp)
@@ -34,10 +35,13 @@ MAIN := the_executable_file
 .PHONY: depend clean clean_all
 
 all:    $(MAIN)
-	@echo  'the_executable_file' has been compiled
+	@echo  '$(MAIN)' has been compiled
 
 $(MAIN): $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	# TODO: If you want to create a normal binary file, use this
+	# $(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	# TODO: If you want to create a shared library, use this
+	$(CC) $(LDFLAGS) -o $@ $^
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
