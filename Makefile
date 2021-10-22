@@ -20,7 +20,7 @@ LFLAGS := -L./libs
 
 # This should generate a shared object
 # TODO: If you want to create a normal binary file, remove this '-shared' flag
-LDFLAGS := -shared
+LDFLAGS :=# -shared
 
 LIBS :=
 
@@ -30,7 +30,7 @@ SRCS := $(wildcard sources/*.cpp)
 OBJS := $(SRCS:.cpp=.o)
 
 # define the executable file
-MAIN := the_executable_file
+MAIN := exe
 
 .PHONY: depend clean clean_all
 
@@ -39,9 +39,9 @@ all:    $(MAIN)
 
 $(MAIN): $(OBJS)
 	# TODO: If you want to create a normal binary file, use this
-	# $(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
 	# TODO: If you want to create a shared library, use this
-	$(CC) $(LDFLAGS) -o $@ $^
+	# $(CC) $(LDFLAGS) -o $@ $^
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
