@@ -20,7 +20,7 @@ LFLAGS := -L./libs
 
 # This should generate a shared object
 # TODO: If you want to create a normal binary file, remove this '-shared' flag
-LDFLAGS :=# -shared
+LDFLAGS := #-shared
 
 LIBS :=
 
