@@ -5,17 +5,17 @@
 USE_C = 0
 
 ifeq ($(USE_C), 1)
-CC = gcc
+CC = gcc-12
 SRCS = $(wildcard ./sources/*.c)
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -Wall -Werror -O3 -fPIC -g
 .c.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 else
-CC = g++
+CC = g++-12
 SRCS = $(wildcard ./sources/*.cpp)
 OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -Wall -Werror -O3 -fPIC -std=c++17 -g
+CFLAGS = -Wall -Werror -O3 -fPIC -std=c++20 -g
 .cpp.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
 endif
