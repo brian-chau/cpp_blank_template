@@ -21,8 +21,8 @@ This is an example of how to use:
     1. In the Start menu, open the Microsoft Store, and search for Ubuntu 22.
     2. Select the item called "Ubuntu 22.04.1 LTS" and click "Install."
     3. Click "Open" to launch the command prompt and start the installation process.
-        * If you encounter an error that says "There has been an error", log out and log back in, and try again.
-        * If you encounter an error that says "Failed to attach disk 'C:\Users\....\ext4.vhdx' to WSL2: The system cannot find the file", then do the following:
+        * If you encounter an error that says `There has been an error`, log out and log back in, and try again.
+        * If you encounter an error that says `Failed to attach disk 'C:\Users\....\ext4.vhdx' to WSL2: The system cannot find the file` then do the following:
             1. Launch a new command prompt window by pressing `Ctrl+R`, then typing `cmd`
             2. Type `wsl --list` to find the distribution that used to be installed.
             3. Type `wslconfig /u <name of distribution that used to be installed>` to unlink the distribution.
@@ -157,7 +157,7 @@ This is an example of how to use:
 
 7. Install gcc-12 and g++-12.
     1. Restart WSL.
-    2. Run `sudo apt update` and `sudo apt upgrade`
+    2. Run `sudo apt update && sudo apt upgrade`
     3. Run `sudo apt install g++-12 gcc-12 build-essential`
 
 8. Add GitHub settings
